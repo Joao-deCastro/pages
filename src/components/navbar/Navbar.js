@@ -1,9 +1,9 @@
 import Link from "next/link";
-import * as FaIcons from 'react-icons/fa';
-import * as AiIcons from 'react-icons/ai';
 import { useState } from "react";
 import { SidebarData } from "./SidebarData";
 import styles from './Navbar.module.css';
+import Image from 'next/image'
+import sls from "../../../public/logo1.png"
 
 
 export default function Navbar() {
@@ -15,22 +15,28 @@ export default function Navbar() {
     return (
         <div>
             <div className={styles.navbar}>
-                <Link href={'#'} >
-                    <FaIcons.FaBars onClick={showSideBar} />
-                </Link>
+                <p className={styles.separationBar1}>|</p>
+                <p className={styles.separationBar2}>|</p>
             </div>
             <nav className={styles["nav-menu"]}>
+                <Image
+                src="../../../public/logo1.png"
+                alt="Logo"
+                className={styles.logo}
+                width={100}
+                height={24}
+                />
                 <ul className={styles["nav-menu-itens"]}>
                     
                     {SidebarData.map((item, index) => {
                         return (
-                            <li key={index} className={item.cName}>
+                            <div key={index} className={styles.lista}>
+                                <div className={styles.aaa}>
                                 <Link href={item.path}>
-                                    {item.icon}
-                                    <span>{item.title}</span>
+                                    <span >{item.title}</span>
                                 </Link>
-
-                            </li>
+                                </div>
+                            </div>
                         )
                     })}
                 </ul>

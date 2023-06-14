@@ -37,12 +37,13 @@ export default function Home(){
            
            <Navbar></Navbar>
 
-            <div className={styles.container}>
+        {/* Lista de funcionarios */}
+            {/* <div className={styles.container}>
                 <List >
                     {sellers && sellers.map(i => <ItemStudents name={i.name} registration={i.registration} />)}
                 </List>
             </div>
-
+ */}
 
         </div>
     )
